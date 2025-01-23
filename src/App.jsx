@@ -53,8 +53,8 @@ function App() {
   };
   return (
     <section className="bg-gradient-to-r from-indigo-400 from-5% via-sky-400 via-30% to-emerald-300 to-100% h-screen">
-      <div className="container mx-auto justify-center flex  2xl:top-[10%] xl:top-[10%] lg:top-[10%] md:top-[15%] sm:top-[20%] top-[30%] bottom-[10%] relative">
-        <div className="2xl:p-10 xl:p-10 lg:p-9 md:p-7 sm:p-5 p-5 shadow-xl rounded bg-gradient-to-t from-indigo-400 from-5% via-sky-400 via-30% to-emerald-300 to-100%">
+      <div className="container mx-auto justify-center flex  2xl:top-[15%] xl:top-[15%] lg:top-[15%] md:top-[20%] sm:top-[25%] top-[30%] bottom-[10%] relative">
+        <div className="2xl:p-10 xl:p-10 lg:p-9 md:p-7 sm:p-5 p-5 shadow-xl rounded bg-gradient-to-t from-indigo-400 from-5% via-sky-400 via-30% to-emerald-300 to-100% 2xl:w-[50%] lg:w-[50%] xl:w-[50%] md:w-[60%] sm:w-[80%] w-[90%]">
           <h4 className="font-semibold font-Raleway 2xl:text-3xl xl:text-3xl lg:text-3xl md:text-2xl sm:text-xl text-lg text-secandari text-center 2xl:pb-5 xl:pb-5 lg:pb-5 md:pb-4 sm:pb-3 pb-1">
             ToDo
           </h4>
@@ -77,10 +77,10 @@ function App() {
           <h4 className="font-Raleway font-semibold 2xl:text-xl xl:text-xl lg:text-xl md:text-base sm:text-sm text-xs text-primary py-5">
             Your ToDos
           </h4>
-          <div className=" 2xl:h-[200px] xl:h-[200px] lg:h-[200px] md:h-[180px] sm:h-[150px] h-[120px] overflow-y-scroll px-5 todo">
+          <div className=" 2xl:h-[200px] xl:h-[200px] lg:h-[200px] md:h-[180px] sm:h-[150px] h-[120px] overflow-y-scroll overflow-x-hidden px-5 todo ">
             {todos.map((item, index) => (
-              <div key={index} className="justify-between flex items-center">
-                <div className="pb-2 gap-3 flex items-center">
+              <div key={index} className="justify-between flex items-center w-full">
+                <div className="pb-2 gap-3 flex items-center ">
                   <input
                     type="checkbox"
                     onChange={() => HandleCheckbox(index)}
@@ -88,7 +88,7 @@ function App() {
                     className=" 2xl:w-4 xl:w-4 lg:w-4 md:w-4 sm:w-3 w-3 2xl:h-4 xl:h-4 lg:h-4 md:h-4 sm:h-3 h-3 cursor-pointer"
                   />
                   <p
-                    className={`font-medium font-Montserrat 2xl:text-base xl:text-base lg:text-base md:text-sm sm:text-xs text-[10px] text-primary cursor-pointer 2xl:w-80 xl:w-80 lg:w-80 md:w-72 sm:w-60 w-40${
+                    className={`font-medium font-Montserrat 2xl:text-base xl:text-base lg:text-base md:text-sm sm:text-xs text-[10px] text-primary cursor-pointer w-[90%] ${
                       item.isCompleted ? "line-through" : ""
                     }`}
                   >
@@ -100,7 +100,7 @@ function App() {
                     <FiEdit className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg" onClick={() => HandleEdits(index)} />
                   </li>
                   <li className="text-2xl text-[#05100e96]">
-                    <MdOutlineDeleteSweep className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg" onClick={() => HandleDelete(index)} />
+                    <MdOutlineDeleteSweep className="text-xs sm:text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-xl" onClick={() => HandleDelete(index)} />
                   </li>
                 </ul>
               </div>
