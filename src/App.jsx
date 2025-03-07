@@ -79,7 +79,10 @@ function App() {
           </h4>
           <div className=" 2xl:h-[200px] xl:h-[200px] lg:h-[200px] md:h-[180px] sm:h-[150px] h-[120px] overflow-y-scroll overflow-x-hidden px-5 todo ">
             {todos.map((item, index) => (
-              <div key={index} className="justify-between flex items-center w-full">
+              <div
+                key={index}
+                className="justify-between flex items-center w-full"
+              >
                 <div className="pb-2 gap-3 flex items-center ">
                   <input
                     type="checkbox"
@@ -97,10 +100,16 @@ function App() {
                 </div>
                 <ul className="justify-between flex items-center gap-3">
                   <li className="text-xl text-[#05100e96]">
-                    <FiEdit className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg" onClick={() => HandleEdits(index)} />
+                    <FiEdit
+                      className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg cursor-pointer"
+                      onClick={() => HandleEdits(index)}
+                    />
                   </li>
                   <li className="text-2xl text-[#05100e96]">
-                    <MdOutlineDeleteSweep className="text-xs sm:text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-xl" onClick={() => HandleDelete(index)} />
+                    <MdOutlineDeleteSweep
+                      className="text-xs sm:text-sm md:text-base lg:text-xl xl:text-xl 2xl:text-xl cursor-pointer"
+                      onClick={() => HandleDelete(index)}
+                    />
                   </li>
                 </ul>
               </div>
